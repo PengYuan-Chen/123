@@ -1,97 +1,98 @@
 <template>
-<div class="list-container">
-    <div class="sortList clearfix">
-        <div class="center">
-            <!--banner轮播-->
-            <carousel :list="list" />
-        </div>
-        <div class="right">
-            <div class="news">
-                <h4>
-                    <em class="fl">尚品汇快报</em>
-                    <span class="fr tip">更多 ></span>
-                </h4>
-                <div class="clearix"></div>
-                <ul class="news-list unstyled">
-                    <li>
-                        <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+    <div class="list-container">
+        
+        <div class="sortList clearfix">
+            <div class="center">
+                <!--banner輪播-->
+                <carousel :list="list" />
+            </div>
+            <div class="right">
+                <div class="news">
+                    <h4>
+                        <em class="fl">快報</em>
+                        <span class="fr tip">更多 ></span>
+                    </h4>
+                    <div class="clearix"></div>
+                    <ul class="news-list unstyled">
+                        <li>
+                            <span class="bold">[特惠]</span>備戰開學季 全民半價購數碼
+                        </li>
+                        <li>
+                            <span class="bold">[公告]</span>備戰開學季 全民半價購數碼
+                        </li>
+                        <li>
+                            <span class="bold">[特惠]</span>備戰開學季 全民半價購數碼
+                        </li>
+                        <li>
+                            <span class="bold">[公告]</span>備戰開學季 全民半價購數碼
+                        </li>
+                        <li>
+                            <span class="bold">[特惠]</span>備戰開學季 全民半價購數碼
+                        </li>
+                    </ul>
+                </div>
+                <ul class="lifeservices">
+                    <li class=" life-item ">
+                        <i class="list-item"></i>
+                        <span class="service-intro">話費</span>
                     </li>
-                    <li>
-                        <span class="bold">[公告]</span>备战开学季 全民半价购数码
+                    <li class=" life-item ">
+                        <i class="list-item"></i>
+                        <span class="service-intro">機票</span>
                     </li>
-                    <li>
-                        <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+                    <li class=" life-item ">
+                        <i class="list-item"></i>
+                        <span class="service-intro">電影票</span>
                     </li>
-                    <li>
-                        <span class="bold">[公告]</span>备战开学季 全民半价购数码
+                    <li class=" life-item ">
+                        <i class="list-item"></i>
+                        <span class="service-intro">遊戲</span>
                     </li>
-                    <li>
-                        <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">彩票</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">加油站</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">酒店</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">火車票</span>
+                    </li>
+                    <li class=" life-item ">
+                        <i class="list-item"></i>
+                        <span class="service-intro">眾籌</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">理財</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">禮品卡</span>
+                    </li>
+                    <li class=" life-item">
+                        <i class="list-item"></i>
+                        <span class="service-intro">白條</span>
                     </li>
                 </ul>
-            </div>
-            <ul class="lifeservices">
-                <li class=" life-item ">
-                    <i class="list-item"></i>
-                    <span class="service-intro">话费</span>
-                </li>
-                <li class=" life-item ">
-                    <i class="list-item"></i>
-                    <span class="service-intro">机票</span>
-                </li>
-                <li class=" life-item ">
-                    <i class="list-item"></i>
-                    <span class="service-intro">电影票</span>
-                </li>
-                <li class=" life-item ">
-                    <i class="list-item"></i>
-                    <span class="service-intro">游戏</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">彩票</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">加油站</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">酒店</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">火车票</span>
-                </li>
-                <li class=" life-item ">
-                    <i class="list-item"></i>
-                    <span class="service-intro">众筹</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">理财</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">礼品卡</span>
-                </li>
-                <li class=" life-item">
-                    <i class="list-item"></i>
-                    <span class="service-intro">白条</span>
-                </li>
-            </ul>
-            <div class="ads">
-                <img src="./images/ad1.png" />
+                <div class="ads">
+                    <img src="./images/beer.jpg" style="width:250px;height:70px"/>
+                </div>
             </div>
         </div>
-    </div>
-</div>  
-</template>
+    </div>  
+    </template>
 
 <script>
 export default {
     name:'ListContainer',
-    props:['list']
+    props:['list']    //如果要請求的話
     //發請求取的mock資料
     /*
     問題:swiper該放哪裡?
@@ -119,9 +120,8 @@ export default {
         })    
             },
         3.定時器也可以，設定1秒後再執行
-    */
-    /*swiper最好的解法，watch+$nextTick:等資料變動，確定頁面更新完後再執行swiper功能 常用的功能
-    watch:{    //bannerList數據變化時調用
+     //swiper最好的解法，watch+$nextTick:等資料變動，確定頁面更新完後再執行swiper功能 常用的功能
+        watch:{    //bannerList數據變化時調用
         bannerList:{
             handler(newVal,oldVal){
                 this.$nextTick(()=>{var mySwiper = new Swiper ('.swiper-container', {

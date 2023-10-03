@@ -5,9 +5,9 @@
       <div class="cart-th">
         <div class="cart-th1">全部</div>
         <div class="cart-th2">商品</div>
-        <div class="cart-th3">单价（元）</div>
-        <div class="cart-th4">数量</div>
-        <div class="cart-th5">小计（元）</div>
+        <div class="cart-th3">單價（元）</div>
+        <div class="cart-th4">數量</div>
+        <div class="cart-th5">小計（元）</div>
         <div class="cart-th6">操作</div>
       </div>
       <div class="cart-body">
@@ -31,7 +31,7 @@
             <span class="sum">{{cart.skuNum*cart.skuPrice}}</span>
           </li>
           <li class="cart-list-con7">
-            <a href="#none" class="sindelet" @click="deleteCartList(cart.skuId)">删除</a>
+            <a href="#none" class="sindelet" @click="deleteCartList(cart.skuId)">刪除</a>
             <br>
             <a href="#none">移到收藏</a>
           </li>
@@ -41,22 +41,22 @@
     <div class="cart-tool">
       <div class="select-all">
         <input class="chooseAll" type="checkbox" :checked='isAllChecked && cartInfoList.length!=0' @change="updateAllCartChecked($event)">
-        <span>全选</span>
+        <span>全選</span>
       </div>
       <div class="option">
-        <a href="#none" @click="deleteAllChecked">删除选中的商品</a>
-        <a href="#none">移到我的关注</a>
-        <a href="#none">清除下柜商品</a>
+        <a href="#none" @click="deleteAllChecked">刪除選中的商品</a>
+        <a href="#none">移到我的關注</a>
+        <a href="#none">清除下櫃商品</a>
       </div>
       <div class="money-box">
-        <div class="chosed">已选择
+        <div class="chosed">已選擇
           <span>0</span>件商品</div>
         <div class="sumprice">
-          <em>总价（不含运费） ：</em>
+          <em>總價（不含運費） ：</em>
           <i class="summoney">{{totalPrice}}</i>
         </div>
         <div class="sumbtn">
-          <a class="sum-btn" target="_blank" @click="$router.push('/trade')">结算</a>
+          <a class="sum-btn" target="_blank" @click="$router.push('/trade')">結算</a>
         </div>
       </div>
     </div>

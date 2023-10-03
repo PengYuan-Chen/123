@@ -6,13 +6,13 @@
                         <p class="img">
                             <i></i>
                         </p>
-                        <p class="text">热卖排行</p>
+                        <p class="text">熱賣排行</p>
                     </a>
                     <a href="javascript:;">
                         <p class="img">
                             <i></i>
                         </p>
-                        <p class="text">特价排行</p>
+                        <p class="text">特價排行</p>
                     </a>
                     <a href="javascript:;">
                         <p class="img">
@@ -29,53 +29,53 @@
                         <div class="img-item">
                             <p class="tab-pic">
                                 <a href="#">
-                                    <img src="./images/1.jpg" />
+                                    <img src="./images/ice.jpg" />
                                 </a>
                             </p>
                             <div class="tab-info">
                                 <div class="info-title">
-                                    <a href="#">【官网价直降1100】Apple iPhone 8 Plus 256GB 银色 移动联通电信4G手机</a>
+                                    <a href="#">甜筒冰淇淋</a>
                                 </div>
-                                <p class="info-price">定金：¥100.00</p>
+                                <p class="info-price">$100</p>
                             </div>
                         </div>
                         <div class="img-item">
                             <p class="tab-pic">
                                 <a href="#">
-                                    <img src="./images/1.jpg" />
+                                    <img src="./images/donut.jpg" />
                                 </a>
                             </p>
                             <div class="tab-info">
                                 <div class="info-title">
-                                    <a href="#">【官网价直降1100】Apple iPhone 8 Plus 256GB 银色 移动联通电信4G手机</a>
+                                    <a href="#">甜甜圈</a>
                                 </div>
-                                <p class="info-price">定金：¥100.00</p>
+                                <p class="info-price">$30</p>
                             </div>
                         </div>
                         <div class="img-item">
                             <p class="tab-pic">
                                 <a href="#">
-                                    <img src="./images/1.jpg" />
+                                    <img src="./images/donut1.jpg" />
                                 </a>
                             </p>
                             <div class="tab-info">
                                 <div class="info-title">
-                                    <a href="#">【官网价直降1100】Apple iPhone 8 Plus 256GB 银色 移动联通电信4G手机</a>
+                                    <a href="#">綜合甜甜圈</a>
                                 </div>
-                                <p class="info-price">定金：¥100.00</p>
+                                <p class="info-price">$100</p>
                             </div>
                         </div>
                         <div class="img-item">
                             <p class="tab-pic">
                                 <a href="#">
-                                    <img src="./images/1.jpg" />
+                                    <img src="./images/sand.jpg" />
                                 </a>
                             </p>
                             <div class="tab-info">
                                 <div class="info-title">
-                                    <a href="#">【官网价直降1100】Apple iPhone 8 Plus 256GB 银色 移动联通电信4G手机</a>
+                                    <a href="#">總匯三明治</a>
                                 </div>
-                                <p class="info-price">定金：¥100.00</p>
+                                <p class="info-price">$3000</p>
                             </div>
                         </div>
                     </li>
@@ -132,7 +132,7 @@ export default {
             }
 
             .on {
-                color: #e60012;
+                color: blue;
 
                 .img {
                     i {
@@ -154,7 +154,7 @@ export default {
                 line-height: 18px;
 
                 .img-item {
-                    border: 1px solid #e1251b;
+                    border: 1px solid blue;
                     width: 269px;
                     float: left;
                     overflow: hidden;
@@ -194,7 +194,7 @@ export default {
 
                         .info-price {
                             font-size: 20px;
-                            color: #e1251b;
+                            color: blue;
                             height: 35px;
                             padding-left: 10px;
                             display: block;

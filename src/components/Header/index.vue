@@ -6,7 +6,7 @@
         <div class="top">
             <div class="container">
                 <div class="loginList">
-                    <p>尚品汇欢迎您！</p>
+                    <p>歡迎您！</p>
                     <p v-if="!userName" >
                         <span>请</span>
                         <router-link to="/login">登入</router-link>
@@ -19,20 +19,19 @@
                 </div>
                 <div class="typeList">
                     <router-link to="/center">我的訂單</router-link>
-                    <router-link to="/shopcart">我的购物车</router-link>
-                    <a href="###">我的尚品汇</a>
-                    <a href="###">尚品汇会员</a>
-                    <a href="###">企业采购</a>
-                    <a href="###">关注尚品汇</a>
+                    <router-link to="/shopcart">我的購物車</router-link>
+                    <a href="###">會員</a>
+                    <a href="###">企業采購</a>
+                    <a href="###">關注</a>
                     <a href="###">合作招商</a>
-                    <a href="###">商家后台</a>
+                    <a href="###">商家後台</a>
                 </div>
             </div>
         </div>
         <div class="bottom">
                 <h1 class="logoArea">
                     <a class="logo" title="尚品汇" href="###" target="_blank">
-                        <router-link to="/home"><img src="./images/logo.png" alt=""></router-link>                      
+                        <router-link to="/home"><img src="./images/logo.png" alt="" style="height: 60px;width:200px"></router-link>                      
                     </a>
                 </h1>
                 <div class="searchArea">
@@ -154,7 +153,7 @@ export default {
                     width: 490px;
                     height: 32px;
                     padding: 0px 4px;
-                    border: 2px solid #ea4a36;
+                    border: 2px solid blue;
                     float: left;
 
                     &:focus {
@@ -165,7 +164,7 @@ export default {
                 button {
                     height: 32px;
                     width: 68px;
-                    background-color: #ea4a36;
+                    background-color: blue;
                     border: none;
                     color: #fff;
                     float: left;

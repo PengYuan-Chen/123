@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 Vue.config.devtools=true;
 //引入mock
 import '@/mock/mockServe' 
-//引入swiper樣式(多個組件會用到所以在這邊引入)
+//引入swiper套件(輪播圖)(多個組件會用到所以在這邊引入)他沒有export所以直接匯入即可運行
 import 'swiper/css/swiper.css'
 //統一引入  api裡面所有的函數(引一次就夠了不用一直引)
 import * as API from '@/api'
@@ -39,6 +39,5 @@ new Vue({
     //利用全局事件總線概念
     Vue.prototype.$api=API
   }
-  
 }) 
  

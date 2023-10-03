@@ -7,10 +7,6 @@
           <li v-for="(trade,index) in trademarkList" :key="index" @click="tradeMarkHandler(trade)">{{trade.tmName}}</li>
         </ul>
       </div>
-      <div class="ext">
-        <a href="javascript:void(0);" class="sui-btn">多选</a>
-        <a href="javascript:void(0);">更多</a>
-      </div>
     </div>
     <!--平台售賣屬性-->
     <div class="type-wrap" v-for="attr in attrsList" :key="attr.attrId">
@@ -29,14 +25,15 @@
 </template>
 
 <script>
-import { mapGetters} from 'vuex';
+import {mapGetters} from 'vuex';
   export default {
     name: 'SearchSelector',
     computed:{
+        //撈產品商標
         ...mapGetters(['attrsList','trademarkList'])
     },
     methods:{
-      //點擊品牌顯示的方法(自訂義事件)
+      //點擊品牌顯示的方法(自訂義事件子給父)
       tradeMarkHandler(trade){
         this.$emit('getTrad',trade)
       },
@@ -100,7 +97,7 @@ import { mapGetters} from 'vuex';
             text-overflow: ellipsis;
             white-space: nowrap;
             font-weight: 700;
-            color: #e1251b;
+            color: rgb(10, 23, 112);
             font-style: italic;
             font-size: 14px;
 

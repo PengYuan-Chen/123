@@ -19,7 +19,7 @@ const actions={
     getBannerList(context){  
         reqGetBannerList().then((res)=>{
             let result=res;
-            if(result.code===200){
+            if(result.code===200){               
                 context.commit('GETBANNERLIST',result.data)
             }
         });
@@ -50,8 +50,7 @@ const mutations={
 const state={
     categoryList:[],
     bannerList:[],
-    floorList:[],
-    
+    floorList:[]  
 };
 const getters={};
 

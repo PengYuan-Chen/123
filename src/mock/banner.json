@@ -1,18 +1,14 @@
-[
+[   
     {
         "id": "1",
-        "imgUrl": "/images/banner1.jpg"
+        "imgUrl": "/images/apple.jpg"
     },
     {
         "id": "2",
-        "imgUrl": "/images/banner2.jpg"
+        "imgUrl": "/images/orange.jpg"
     },
     {
         "id": "3",
-        "imgUrl": "/images/banner3.jpg"
-    },
-    {
-        "id": "4",
-        "imgUrl": "/images/banner4.jpg"
+        "imgUrl": "/images/lemon.jpg"
     }
 ]

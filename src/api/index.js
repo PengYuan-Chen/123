@@ -12,14 +12,14 @@ export const reqCategoryList=()=>    //具名匯出函式
 
 //mock
 export const reqGetBannerList=()=>    //具名匯出函式 
-    mockRequests({    //用requests對象發請求
+    mockRequests({    //用mockrequests對象發請求mock到mock服務器
         url:'/mock/banner',
         method:'get'
     })
     
 //mock
 export const reqGetFloorList=()=>    //具名匯出函式 
-    mockRequests({    //用requests對象發請求
+    mockRequests({    //用mockrequests對象發請求到mock服務器
         url:'/mock/floor',
         method:'get'
     })

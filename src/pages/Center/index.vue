@@ -2,58 +2,58 @@
   <div class="order-main">
     <div class="container">
       <div class="order-body">
-        <!--左侧列表-->
+        <!--左側列表-->
         <div class="order-left">
           <dl>
-            <dt><i>·</i> 订单中心</dt>
+            <dt><i>·</i> 訂單中心</dt>
             <dd>
-              <router-link to="/center/myorder">我的订单</router-link>            
+              <router-link to="/center/myorder">我的訂單</router-link>            
             </dd>
             <dd>
-              <router-link to="/center/grouporder">团购订单</router-link>               
+              <router-link to="/center/grouporder">團購訂單</router-link>               
             </dd>
-            <dd>本地生活订单 </dd>
-            <dd>我的预售</dd>
-            <dd>评价晒单</dd>
-            <dd>取消订单记录</dd>
+            <dd>本地生活訂單 </dd>
+            <dd>我的預售</dd>
+            <dd>評價曬單</dd>
+            <dd>取消訂單記錄</dd>
           </dl>
           <dl>
-            <dt><i>·</i> 关注中心</dt>
-            <dd>关注的商品 </dd>
-            <dd>关注的店铺</dd>
-            <dd>关注的专辑 </dd>
-            <dd>关注的品牌</dd>
-            <dd>关注的活动 </dd>
-            <dd>浏览历史</dd>
+            <dt><i>·</i> 關注中心</dt>
+            <dd>關注的商品 </dd>
+            <dd>關注的店鋪</dd>
+            <dd>關注的專輯 </dd>
+            <dd>關注的品牌</dd>
+            <dd>關注的活動 </dd>
+            <dd>瀏覽歷史</dd>
           </dl>
           <dl>
-            <dt><i>·</i> 特色业务</dt>
-            <dd>我的营业厅 </dd>
-            <dd>京东通信 </dd>
+            <dt><i>·</i> 特色業務</dt>
+            <dd>我的營業廳 </dd>
+            <dd>京東通信 </dd>
             <dd>定期送 </dd>
-            <dd>京东代下单</dd>
-            <dd>我的回收单 </dd>
-            <dd>节能补贴</dd>
-            <dd>医药服务 </dd>
+            <dd>京東代下單</dd>
+            <dd>我的回收單 </dd>
+            <dd>節能補貼</dd>
+            <dd>醫藥服務 </dd>
             <dd>流量加油站 </dd>
-            <dd>黄金托管</dd>
+            <dd>黃金托管</dd>
           </dl>
           <dl>
-            <dt><i>·</i> 客户服务</dt>
-            <dd>返修退换货 </dd>
-            <dd>价格保护 </dd>
-            <dd>意见建议 </dd>
-            <dd>购买咨询 </dd>
-            <dd>交易纠纷 </dd>
-            <dd>我的发票</dd>
+            <dt><i>·</i> 客戶服務</dt>
+            <dd>返修退換貨 </dd>
+            <dd>價格保護 </dd>
+            <dd>意見建議 </dd>
+            <dd>購買咨詢 </dd>
+            <dd>交易糾紛 </dd>
+            <dd>我的發票</dd>
           </dl>
           <dl>
-            <dt><i>·</i> 设置</dt>
-            <dd>个人信息 </dd>
-            <dd>收货地址 </dd>
+            <dt><i>·</i> 設置</dt>
+            <dd>個人信息 </dd>
+            <dd>收貨地址 </dd>
           </dl>
         </div>
-        <!-- 右侧内容 -->
+        <!-- 右側內容 -->
         <router-view></router-view>
       </div>
     </div>

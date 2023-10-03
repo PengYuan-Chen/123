@@ -1,15 +1,15 @@
 <template>
-  <div class="login-container">
-    <!-- 登录 -->
+<div class="login-container">
+    <!-- 登錄 -->
     <div class="login-wrap">
       <div class="login">
         <div class="loginform">
           <ul class="tab clearFix">
             <li>
-              <a href="##" style="border-right: 0;">扫描登录</a>
+              <a href="##" style="border-right: 0;">掃描登錄</a>
             </li>
             <li>
-              <a href="##" class="current">账户登录</a>
+              <a href="##" class="current">帳戶登錄</a>
             </li>
           </ul>
 
@@ -17,20 +17,20 @@
             <form>
               <div class="input-text clearFix">
                 <span></span>
-                <input type="text" placeholder="邮箱/用户名/手机号" v-model="phone">
+                <input type="text" placeholder="郵箱/用戶名/手機號" v-model="phone">
               </div>
               <div class="input-text clearFix">
                 <span class="pwd"></span>
-                <input type="text" placeholder="请输入密码" v-model="password">
+                <input type="text" placeholder="請輸入密碼" v-model="password">
               </div>
               <div class="setting clearFix">
                 <label class="checkbox inline">
                   <input name="m1" type="checkbox" value="2" checked="">
-                  自动登录
+                  自動登錄
                 </label>
-                <span class="forget">忘记密码？</span>
+                <span class="forget">忘記密碼？</span>
               </div>
-              <button class="btn" @click.prevent="getLogin">登&nbsp;&nbsp;录</button>
+              <button class="btn" @click.prevent="getLogin">登&nbsp;&nbsp;錄</button>
             </form>
 
             <div class="call clearFix">
@@ -40,7 +40,7 @@
                 <li><img src="./images/ali.png" alt=""></li>
                 <li><img src="./images/weixin.png" alt=""></li>
               </ul>
-              <router-link class="register" to="/register">立即注册</router-link>
+              <router-link class="register" to="/register">立即注冊</router-link>
             </div>
           </div>
         </div>
@@ -49,17 +49,17 @@
     <!-- 底部 -->
     <div class="copyright">
       <ul>
-        <li>关于我们</li>
-        <li>联系我们</li>
-        <li>联系客服</li>
-        <li>商家入驻</li>
-        <li>营销中心</li>
-        <li>手机尚品汇</li>
-        <li>销售联盟</li>
-        <li>尚品汇社区</li>
+        <li>關於我們</li>
+        <li>聯系我們</li>
+        <li>聯系客服</li>
+        <li>商家入駐</li>
+        <li>營銷中心</li>
+        <li>手機尚品匯</li>
+        <li>銷售聯盟</li>
+        <li>尚品匯社區</li>
       </ul>
-      <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号
+      <div class="address">地址：桃園市大園區</div>
+      <div class="beian">下埔路
       </div>
     </div>
   </div>

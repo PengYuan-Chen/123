@@ -5,20 +5,20 @@
             <li class="clock">
                 <div class="time">
                     <img src="./images/clock.png" />
-                    <h3>今日推荐</h3>
+                    <h3>今日推薦</h3>
                 </div>
             </li>
             <li class="banner">
-                <img src="./images/today01.png" />
+                <img src="./images/straw.jpg" style="width: 200px;"/>
             </li>
             <li class="banner">
-                <img src="./images/today02.png" />
+                <img src="./images/coffrr.jpg" style="width: 200px;"/>
             </li>
             <li class="banner">
-                <img src="./images/today03.png" />
+                <img src="./images/milk.jpg" style="width: 200px;"/>
             </li>
             <li class="banner">
-                <img src="./images/today04.png" />
+                <img src="./images/bakery.jpg" style="width: 200px;"/>
             </li>
         </ul>
     </div>

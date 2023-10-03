@@ -1,27 +1,32 @@
 <template>
+<!--處理三級分類-->
 <div class="type-nav">
     <!--滑鼠進入時展示列表，移出時不展示-->
     <div class="container" @mouseleave="changeShowFalse()">
-        <h2 class="all" @mouseenter="changeShowTrue()" >全部商品分类</h2>
+        <h2 class="all" @mouseenter="changeShowTrue()" >全部商品分類</h2>
         <nav class="nav">
-            <a href="###">服装城</a>
-            <a href="###">美妆馆</a>
-            <a href="###">尚品汇超市</a>
-            <a href="###">全球购</a>
-            <a href="###">闪购</a>
-            <a href="###">团购</a>
+            <a href="###">服裝城</a>
+            <a href="###">美妝館</a>
+            <a href="###">超市</a>
+            <a href="###">全球購</a>
+            <a href="###">閃購</a>
+            <a href="###">團購</a>
             <a href="###">有趣</a>
-            <a href="###">秒杀</a>
+            <a href="###">秒殺</a>
         </nav>
         <!--加一個動畫效果-->
         <transition name="sort">
+        <!--整個三級列表的部分-->
         <div class="sort" @mouseleave="noMouse()" v-show="isShow">
             <div class="all-sort-list2" @click="goSearch">    <!--點擊後帶著參數跳到search頁面-->
              <!--根據123級分類去跑for loop-->
-                <div class="item" v-for="(c1,index) in categoryList" :key="c1.categoryId" :class="{cur:currentIndex==index}">     <!-- 1級分類-->
-                    <!--判斷滑鼠碰到變色-->
-                    <h3 @mouseenter="getMouse(index)" >
-                        <!--加上自訂屬性(前面加上data-表示可以用某函數取得此自訂屬性)-->
+                <!-- 1級分類，判斷滑鼠碰到變色:cur-->
+                <div class="item" v-for="(c1,index) in categoryList" 
+                    :key="c1.categoryId" 
+                    :class="{cur:currentIndex==index}"    
+                    @mouseenter="getMouse(index)">    
+                    <h3>
+                        <!--加上自訂屬性(前面加上data-表示可以用dataset取得此自訂屬性)-->
                         <a :data-categoryName="c1.categoryName"    
                             :data-category1Id="c1.categoryId" >{{c1.categoryName}}</a>  
                     </h3>
@@ -38,7 +43,6 @@
                                         <a :data-categoryName="c3.categoryName"
                                            :data-category3Id="c3.categoryId">{{c3.categoryName}}</a>
                                     </em>
-
                                 </dd>
                             </dl>
                         </div>
@@ -46,8 +50,7 @@
                 </div>            
             </div>
         </div>
-        </transition>
-        
+        </transition>     
     </div>
 </div>  
 </template>
@@ -59,77 +62,84 @@ export default {
     name:'TypeNav',
     data(){
         return{
-            currentIndex:-1,
-            isShow:true
+            currentIndex:-1,    //點第幾個
+            isShow:true  //決定三級列表是否要展示，預設為true:展示
         }
     },
-    //一掛載完畢立即通知vuex發請求，數據存於state中
-    mounted(){
-        
+    mounted(){       
         if(this.$route.path!='/home'){
-            this.isShow=false;
+            this.isShow=false;    //除了在home以外都預設不展示，所以isshow會是false
+        }else{
+            this.isShow=true;
         }
     },
     computed:{  
-        ...mapState({categoryList:(bigstate)=>{
-            return bigstate.home.categoryList
+        //把倉庫的categoryList(三級列表的數據)抓過來用
+        ...mapState({categoryList:(state)=>{
+            return state.home.categoryList
         }})
     },
     methods:{
-        getMouse: _.throttle(function(index){    //用戶出發函數，隨即執行throttle
-            this.currentIndex=index;
-        },50),    //幾秒才執行一次
+        //當你鼠碰到時觸發，傳入當前index
+        getMouse: _.throttle(function(index){    //用戶出發函數，隨即執行throttle節流
+            this.currentIndex=index;    //index是當前位置
+        },50),    //幾豪秒才執行一次
        
         noMouse(){
             this.currentIndex=-1;
         },
+        //點下去時
         goSearch(event){
-            let element=event.target
+            let element=event.target    //觸發的目標元素
             let cate=element.dataset;        //取的標籤中的所有自訂屬性
 
-            let location={name:'search'}    //進行編程式路由
-            let query={categoryName:cate.categoryname}
-            if(cate.category1id){
+            let location={name:'search'}    //進行編程式路由到search
+            let query={categoryName:cate.categoryname}    //參數要帶上id跟name是用query
+            if(cate.category1id){    //判斷是123級路由
                 query.category1Id=cate.category1id      
             }else if(cate.category2id){
                 query.category2Id=cate.category2id
             }else if(cate.category3id){
                 query.category3Id=cate.category3id
             }
-            location.query=query
+            location.query=query    //帶上query
             if(this.$route.params){     //兩種參數都要傳過去:query跟搜尋的params
-                location.params=this.$route.params
+                location.params=this.$route.params    //帶上params
             }
             this.$router.push(location)    //開始路由
         },
+        //滑鼠進來時顯示三級分類
         changeShowTrue(){
-            if(this.$route.path!='/home'){
-                this.isShow=true;
-            }         
+            this.isShow=true;
         },
+        //鼠標離開時
         changeShowFalse(){
             if(this.$route.path!='/home'){
-                this.isShow=false;
-            } 
+                this.isShow=false;    //除了在home以外都預設不展示，所以isshow會是false
+            }else{
+                this.isShow=true;
+            }
         }
     }
 }
 </script>
 
 <style scoped lang="less">
+//都在type-nav跟container裡面
 .type-nav {
-    border-bottom: 2px solid #e1251b;
+    border-bottom: 2px solid blue;
 
     .container {
         width: 1200px;
-        margin: 0 auto;
+        margin: 0 auto;    //水平置中
         display: flex;
         position: relative;
 
-        .all {
+
+        .all {    //全部商品分類    
             width: 210px;
             height: 45px;
-            background-color: #e1251b;
+            background-color: blue;
             line-height: 45px;
             text-align: center;
             color: #fff;
@@ -137,7 +147,7 @@ export default {
             font-weight: bold;
         }
 
-        .nav {
+        .nav {    //橫向列表
             a {
                 height: 45px;
                 margin: 0 22px;
@@ -147,7 +157,7 @@ export default {
             }
         }
 
-        .sort {
+        .sort {    //整個三級分類
             position: absolute;
             left: 0;
             top: 45px;
@@ -158,7 +168,7 @@ export default {
             z-index: 999;
 
             .all-sort-list2 {
-                .item {
+                .item {    //一級
                     h3 {
                         line-height: 30px;
                         font-size: 14px;
@@ -172,7 +182,7 @@ export default {
                         }
                     }
 
-                    .item-list {
+                    .item-list {    //二級
                         display: none;
                         position: absolute;
                         width: 734px;
@@ -183,7 +193,7 @@ export default {
                         top: 0;
                         z-index: 9999 !important;
 
-                        .subitem {
+                        .subitem {    //三級
                             float: left;
                             width: 650px;
                             padding: 0 4px 0 8px;
@@ -194,7 +204,7 @@ export default {
                                 overflow: hidden;
                                 zoom: 1;
 
-                                &.fore {
+                                .fore {   
                                     border-top: 0;
                                 }
 
@@ -227,18 +237,19 @@ export default {
                     }
                 }
             }
-            .cur{
-                        background-color: skyblue;
+            .cur{    //高量的顏色
+                background-color: skyblue;
             }
             
         }
-        .sort-enter,.sort-leave-to{
+        
+        .sort-enter,.sort-leave-to{    //動畫
             height:0;
         }
-        .sort-enter-active,.sort-leave-active{
+        .sort-enter-active,.sort-leave-active{    //中間動畫
             transition: .3s linear;            
         }
-        .sort-enter-to,.sort-leave{
+        .sort-enter-to,.sort-leave{    
             height:461px;
         }
     }

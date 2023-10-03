@@ -1,5 +1,5 @@
 <template>
-  <div>
+    <div>
     <typeNav />
     <div class="main">
       <div class="py-container">
@@ -7,10 +7,11 @@
         <div class="bread">
           <ul class="fl sui-breadcrumb">
             <li>
-              <a href="#">全部结果</a>
+              <a href="#">全部結果</a>
             </li>
           </ul>
           <ul class="fl sui-tag">
+            <!--有這些資訊就要有麵包屑-->
             <li class="with-x" v-if="searchParams.categoryName">{{searchParams.categoryName}}<i @click="removeName">×</i></li>
             <li class="with-x" v-if="searchParams.keyword">{{searchParams.keyword}}<i @click="removeParams">×</i></li>
             <li class="with-x" v-if="searchParams.trademark">{{searchParams.trademark.split(':')[1]}}<i @click="removeTrade">×</i></li>
@@ -18,21 +19,22 @@
           </ul>
         </div>
 
-        <!--selector中間那一塊-->
+        <!--品牌跟售賣屬性(自訂義事件子給父)-->
         <SearchSelector @getTrad="getTrade" @getAtr="getAttr"/>
 
         <!--details-->
         <div class="details clearfix">
           <div class="sui-navbar">
             <div class="navbar-inner filter">
-              <!--中間列表-->
+              <!--排序按鈕-->
               <ul class="sui-nav">
+                <!--active表是否選中的效果-->
                 <li :class="{active:isOne}" @click="changeOrder(1)">
-                  <a href="#">综合<span v-show="isOne">{{isUp}}</span></a>
+                  <a href="#">綜合<span v-show="isOne">{{isUp}}</span></a>
                 </li>            
                
                 <li :class="{active:isTwo}" @click="changeOrder(2)">
-                  <a href="#">价格<span v-show="isTwo">{{isUp}}</span></a>
+                  <a href="#">價格<span v-show="isTwo">{{isUp}}</span></a>
                 </li>
               </ul>
             </div>
@@ -43,12 +45,11 @@
               <li class="yui3-u-1-5" v-for="(good,index) in goodsList" :key="index">
                 <div class="list-wrap">
                   <div class="p-img">
-                    <!--路由跳轉帶參數-->
+                    <!--路由跳轉到detail帶產品id-->
                      <router-link :to="`/detail/${good.id}`">
                       <!--圖片懶加載使用直接把img:改成v-lazy-->
                         <img v-lazy="good.defaultImg" /> 
-                     </router-link>
-                      
+                     </router-link>               
                   </div>
                   <div class="price">
                     <strong>
@@ -57,16 +58,17 @@
                     </strong>
                   </div>
                   <div class="attr">
-                    <a target="_blank" href="item.html" title="促销信息，下单即赠送三个月CIBN视频会员卡！【小米电视新品4A 58 火爆预约中】">
+                    <a target="_blank" href="item.html" title="促銷信息，下單即贈送三個月CIBN視頻會員卡！【小米電視新品4A 58 火爆預約中】">
                       {{good.title}}
                     </a>
                   </div>
                   <div class="commit">
-                    <i class="command">已有<span>2000</span>人评价</i>
+                    <i class="command">已有<span>2000</span>人評價</i>
                   </div>
                   <div class="operate">
+                    <!--路由到detail組件帶產品id-->
                     <router-link class="sui-btn btn-bordered btn-danger" :to="`/detail/${good.id}`">
-                     加入购物车 
+                     加入購物車 
                      </router-link>
                     <a href="javascript:void(0);" class="sui-btn btn-bordered">收藏</a>
                   </div>
@@ -74,7 +76,7 @@
               </li>         
             </ul>
           </div>
-          <!--換頁-->
+          <!--換頁 props跟自訂事件-->
           <pagination :pageNo="searchParams.pageNo"  :pageSize="searchParams.pageSize" :total="total" :continues="5" @getPageNo="getPage"/>
         </div>
       </div>
@@ -96,7 +98,7 @@ export default {
             category3Id: "",
             categoryName: "",
             keyword: "",    //搜尋
-            order: "1:desc",    //排序，示例: "1:desc"
+            order: "1:desc",    //預設排序，示例: "1:desc"
             pageNo: 1,    //頁碼
             pageSize: 4,    //每頁展示的數量
             props: [],    //平台售賣屬性
@@ -109,7 +111,7 @@ export default {
     },
     //在發請求前先拿到參數
     beforeMount(){
-    //Object.assign自動把後面兩個對象合併到第一項(找key相同的合併)
+    //Object.assign自動把後面幾個對象合併到第一項(找key相同的合併)(會覆蓋前面)
       Object.assign(this.searchParams,this.$route.query,this.$route.params)
       //this.searchParams.category1Id=this.$route.query.category1Id   不好的寫法太麻煩
     },
@@ -129,6 +131,7 @@ export default {
         isTwo(){
           return this.searchParams.order.indexOf('2')!=-1
         },
+        //箭頭指向
         isUp(){
           if(this.searchParams.order.indexOf('desc')!=-1){
             return '⬇'
@@ -140,7 +143,7 @@ export default {
         
     },
     methods:{
-        //把請求放在函數才可以使用多次，參數是data裡面的那些
+        //把請求放在函數才可以使用多次，參數是searchParams{}
         getData(){
             this.$store.dispatch('getSearchList',this.searchParams)
         },
@@ -151,33 +154,34 @@ export default {
             this.searchParams.category2Id=undefined;
             this.searchParams.category3Id=undefined;
             //this.getData();    //好像可有可無
-            //移除後網址要改變，需要這樣改(params參數要保留不能不見)         
+            //移除後網址要改變，需要這樣改(params參數要保留)         
             this.$router.push({name:'search',params:this.$route.params});
         },
+        //移除搜索資料
         removeParams(){
             this.searchParams.keyword=undefined;
-            this.getData();      //返回的是全空的資料，呈現預設頁面，但網址上還有query參數
-            //有query的情況下執行重新請求一次才會再呈現有query的頁面 
-            if(this.$route.query){   
-                this.$router.push({
-                  name:'search',
-                  query:this.$route.query
-                })
-            }     
+            //跑一次路由
+            this.$router.push({
+              name:'search',
+              query:this.$route.query
+            })       
         },
         getTrade(trade){
+          //trade參數是商標資訊(對象)
           //searchParams.trademark是字串
+          //模板字串``:是一種有格式的字串，要在中間加上變數的話${}
           this.searchParams.trademark=`${trade.tmId}:${trade.tmName}`;
-          this.getData()
+          this.getData()    //重請求
         },
         removeTrade(){
           this.searchParams.trademark=undefined;
           this.getData(); 
         },
         getAttr(attr,atrval){
-          //先整理參數 ["属性ID:属性值:属性名"]
+          //attr某項,atrval選中的
+          //先整理參數格式 ["属性ID:属性值:属性名"]
           let props=`${attr.attrId}:${atrval}:${attr.attrName}`; 
-          if(this.searchParams.props.indexOf(props)==-1){
+          if(this.searchParams.props.indexOf(props)==-1){    //條件不存在才可以點選
               this.searchParams.props.push(props); 
               this.getData(); 
           }            
@@ -186,19 +190,20 @@ export default {
           this.searchParams.props.splice(i,1)    //移除陣列元素
           this.getData(); 
         },
-        //判斷排序方式 flag是區分點擊了哪一個
+        //判斷排序方式 flag是區分點擊了哪一個(1:第一個 2:第二個)
         changeOrder(flag){
           let order=this.searchParams.order
           if(flag==order.split(':')[0]){   //點同一個
-              order=`${flag}:${order.split(':')[1]=='aesc'?'desc':'aesc'}`;
+              order=`${flag}:${order.split(':')[1]=='aesc'?'desc':'aesc'}`;    //排序方式改變
               this.searchParams.order=order
               this.getData(); 
           }else if(flag!=order.split(':')[0]){    //點不同個
-              order=`${flag}:${order.split(':')[1]}`;
+              order=`${flag}:${order.split(':')[1]}`;    //12交換
               this.searchParams.order=order
-              this.getData(); 
+              this.getData();     //帶新資料去請求服務器
           }
         },
+        //換新頁重新請求服務器
         getPage(pageNo){
           this.searchParams.pageNo=pageNo;
           this.getData()
@@ -206,7 +211,7 @@ export default {
     },
     watch:{
       //路徑有改就會執行，變化再發請求
-      //不用深度監聽
+      //不用深度監聽(深度監聽是watch能不能兼是某屬性)
       $route:{    
         handler(nval,oval){
           Object.assign(this.searchParams,this.$route.query,this.$route.params)
@@ -333,7 +338,7 @@ export default {
 
                 &.active {
                   a {
-                    background: #e1251b;
+                    background: blue;
                     color: #fff;
                   }
                 }
@@ -375,7 +380,7 @@ export default {
                 .price {
                   padding-left: 15px;
                   font-size: 18px;
-                  color: #c81623;
+                  color: rgb(7, 65, 255);
 
                   strong {
                     font-weight: 700;
@@ -449,12 +454,12 @@ export default {
                   }
 
                   .btn-danger {
-                    border: 1px solid #e1251b;
-                    color: #e1251b;
+                    border: 1px solid blue;
+                    color: blue;
 
                     &:hover {
-                      border: 1px solid #e1251b;
-                      background-color: #e1251b;
+                      border: 1px solid skyblue;
+                      background-color: skyblue;
                       color: white !important;
                       text-decoration: none;
                     }

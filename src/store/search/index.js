@@ -22,13 +22,13 @@ const state={
 //簡化倉庫數據
 const getters={
     //這邊可能有問題，以防出現網路問題至少回傳空
-    attrsList(state){
+    attrsList(state){    //平台售賣屬性
         return state.searchList.attrsList||[]
     },
-    goodsList(state){
+    goodsList(state){    //產品
         return state.searchList.goodsList||[]
     },
-    trademarkList(state){
+    trademarkList(state){    //商標
         return state.searchList.trademarkList||[]
     }
 }

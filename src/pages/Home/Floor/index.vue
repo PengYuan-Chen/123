@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="split center">
-                        <img src="./images/floor-1-4.png" />
+                        <img :src="list.bigImg" />
                     </div>
                     <div class="split">
                         <span class="floor-x-line"></span>
@@ -55,11 +55,7 @@
 
 export default {
     name:'Floor',
-    data(){
-        return{          
-        }
-    },
-    props:['list'],
+    props:['list']
     /*
     注意:swiper在這邊可以直接放在mounted上，因為props在created時會把資料傳進來，
     已經在beforemounted後完成dom結構，所以直接在mounted呼叫swiper即可

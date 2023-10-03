@@ -1,6 +1,6 @@
 <template>
   <div class="trade-container">
-    <h3 class="title">填写并核对订单信息</h3>
+    <h3 class="title">填寫並核對訂單信息</h3>
     <div class="content">
       <h5 class="receive">收件人信息</h5>
       <div
@@ -21,20 +21,20 @@
       <div class="line"></div>
       <h5 class="pay">支付方式</h5>
       <div class="address clearFix">
-        <span class="username selected">在线支付</span>
-        <span class="username" style="margin-left: 5px">货到付款</span>
+        <span class="username selected">在線支付</span>
+        <span class="username" style="margin-left: 5px">貨到付款</span>
       </div>
       <div class="line"></div>
-      <h5 class="pay">送货清单</h5>
+      <h5 class="pay">送貨清單</h5>
       <div class="way">
         <h5>配送方式</h5>
         <div class="info clearFix">
-          <span class="s1">天天快递</span>
-          <p>配送时间：预计8月10日（周三）09:00-15:00送达</p>
+          <span class="s1">天天快遞</span>
+          <p>配送時間：預計8月10日（周三）09:00-15:00送達</p>
         </div>
       </div>
       <div class="detail">
-        <h5>商品清单</h5>
+        <h5>商品清單</h5>
         <ul
           class="list clearFix"
           v-for="(order, index) in orderInfo.detailArrayList"
@@ -49,28 +49,28 @@
           </li>
           <li>
             <p>{{ order.skuName }}</p>
-            <h4>7天无理由退货</h4>
+            <h4>7天無理由退貨</h4>
           </li>
           <li>
             <h3>￥{{ order.orderPrice }}</h3>
           </li>
           <li>X{{ order.skuNum }}</li>
-          <li>有货</li>
+          <li>有貨</li>
         </ul>
       </div>
       <div class="bbs">
-        <h5>买家留言：</h5>
+        <h5>買家留言：</h5>
         <textarea
-          placeholder="建议留言前先与商家沟通确认"
+          placeholder="建議留言前先與商家溝通確認"
           class="remarks-cont"
           v-model="msg"
         ></textarea>
       </div>
       <div class="line"></div>
       <div class="bill">
-        <h5>发票信息：</h5>
-        <div>普通发票（电子） 个人 明细</div>
-        <h5>使用优惠/抵用</h5>
+        <h5>發票信息：</h5>
+        <div>普通發票（電子） 個人 明細</div>
+        <h5>使用優惠/抵用</h5>
       </div>
     </div>
     <div class="money clearFix">
@@ -78,33 +78,33 @@
         <li>
           <b
             ><i>{{ orderInfo.totalNum }}</i
-            >件商品，总商品金额</b
+            >件商品，總商品金額</b
           >
           <span>¥{{ orderInfo.totalAmount }}</span>
         </li>
         <li>
-          <b>返现：</b>
+          <b>返現：</b>
           <span>0.00</span>
         </li>
         <li>
-          <b>运费：</b>
+          <b>運費：</b>
           <span>0.00</span>
         </li>
       </ul>
     </div>
     <div class="trade">
       <div class="price">
-        应付金额:　<span>¥{{ orderInfo.totalAmount }}</span>
+        應付金額:　<span>¥{{ orderInfo.totalAmount }}</span>
       </div>
       <div class="receiveInfo">
         寄送至:
         <span>{{ userDefaultAddress.fullAddress }}</span>
-        收货人：<span>{{ userDefaultAddress.consignee }}</span>
+        收貨人：<span>{{ userDefaultAddress.consignee }}</span>
         <span>15010658793</span>
       </div>
     </div>
     <div class="sub clearFix">
-      <a class="subBtn" @click="submitOrder">提交订单</a>
+      <a class="subBtn" @click="submitOrder">提交訂單</a>
     </div>
   </div>
 </template>

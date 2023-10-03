@@ -4,25 +4,25 @@
       <div class="checkout-tit">
         <h4 class="tit-txt">
           <span class="success-icon"></span>
-          <span class="success-info">订单提交成功，请您及时付款，以便尽快为您发货~~</span>
+          <span class="success-info">訂單提交成功，請您及時付款，以便盡快為您發貨~~</span>
         </h4>
         <div class="paymark">
-          <span class="fl">请您在提交订单<em class="orange time">4小时</em>之内完成支付，超时订单会自动取消。订单号：<em>145687</em></span>
-          <span class="fr"><em class="lead">应付金额：</em><em class="orange money">￥17,654</em></span>
+          <span class="fl">請您在提交訂單<em class="orange time">4小時</em>之內完成支付，超時訂單會自動取消。訂單號：<em>145687</em></span>
+          <span class="fr"><em class="lead">應付金額：</em><em class="orange money">￥17,654</em></span>
         </div>
       </div>
       <div class="checkout-info">
-        <h4>重要说明：</h4>
+        <h4>重要說明：</h4>
         <ol>
-          <li>尚品汇商城支付平台目前支持<span class="zfb">支付宝</span>支付方式。</li>
-          <li>其它支付渠道正在调试中，敬请期待。</li>
-          <li>为了保证您的购物支付流程顺利完成，请保存以下支付宝信息。</li>
+          <li>尚品匯商城支付平台目前支持<span class="zfb">支付寶</span>支付方式。</li>
+          <li>其它支付渠道正在調試中，敬請期待。</li>
+          <li>為了保證您的購物支付流程順利完成，請保存以下支付寶信息。</li>
         </ol>
-        <h4>支付宝账户信息：（很重要，<span class="save">请保存！！！</span>）</h4>
+        <h4>支付寶賬戶信息：（很重要，<span class="save">請保存！！！</span>）</h4>
         <ul>
-          <li>支付帐号：11111111</li>
-          <li>密码：111111</li>
-          <li>支付密码：111111</li>
+          <li>支付帳號：11111111</li>
+          <li>密碼：111111</li>
+          <li>支付密碼：111111</li>
         </ul>
       </div>
       <div class="checkout-steps">
@@ -40,7 +40,7 @@
 
         <div class="payshipInfo">
           <div class="step-tit">
-            <h5>支付网银</h5>
+            <h5>支付網銀</h5>
           </div>
           <div class="step-cont">
             <ul class="payType">
@@ -73,7 +73,7 @@
           </div>
           <div class="step-cont">
             <span><a href="weixinpay.html" target="_blank">微信支付</a></span>
-            <span>中国银联</span>
+            <span>中國銀聯</span>
           </div>
         </div>
       </div>

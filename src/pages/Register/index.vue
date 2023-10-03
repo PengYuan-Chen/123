@@ -1,24 +1,24 @@
 <template>
-  <div class="register-container">
-    <!-- 注册内容 -->
+<div class="register-container">
+    <!-- 注冊內容 -->
     <div class="register">
-      <h3>注册新用户
-        <span class="go">我有账号，去 <a href="login.html" target="_blank">登陆</a>
+      <h3>注冊新用戶
+        <span class="go">我有賬號，去 <a href="login.html" target="_blank">登陸</a>
         </span>
       </h3>
       <div class="content">
-        <label>手机号:</label>
+        <label>手機號:</label>
         <!--name:要驗證的是哪一項
           v-validate是否必須，驗證規則
           -->
-        <input placeholder="请输入你的手机号" v-model="phone" name="phone"   
+        <input placeholder="請輸入你的手機號" v-model="phone" name="phone"   
                v-validate="{required:true,regex:/^09\d{8}$/}"
                :class="{invalid:errors.has('phone')}">
         <span class="error-msg">{{errors.first("phone")}}</span>
       </div>
       <div class="content">
-        <label>验证码:</label>
-        <input placeholder="请输入驗證碼" v-model="code" name="code"   
+        <label>驗證碼:</label>
+        <input placeholder="請輸入驗證碼" v-model="code" name="code"   
                v-validate="{required:true,regex:/^\d{6}$/}"
                :class="{invalid:errors.has('code')}">
         <button style="width:100px;height:38px" @click="getCode">獲取驗證碼</button>
@@ -26,15 +26,15 @@
         <span class="error-msg">{{errors.first("code")}}</span>
       </div>
       <div class="content">
-        <label>登录密码:</label>
-        <input placeholder="请输入你的登入密碼" v-model="password" name="password"   
+        <label>登錄密碼:</label>
+        <input placeholder="請輸入你的登入密碼" v-model="password" name="password"   
                v-validate="{required:true,regex:/^[0-9A-Za-z]{8,20}$/}"
                :class="{invalid:errors.has('password')}">
                <span class="error-msg">{{errors.first("password")}}</span>
       </div>
       <div class="content">
-        <label>确认密码:</label>
-        <input placeholder="请输入確認密碼" v-model="password1" name="password1"   
+        <label>確認密碼:</label>
+        <input placeholder="請輸入確認密碼" v-model="password1" name="password1"   
                v-validate="{required:true,is:password}"
                :class="{invalid:errors.has('password1')}">
         <span class="error-msg">{{errors.first("password1")}}</span>
@@ -43,28 +43,28 @@
         <input type="checkbox" v-model="agree" name="agree"   
                v-validate="{required:true,'eunha':true}"
                :class="{invalid:errors.has('password1')}">
-        <span>同意协议并注册《尚品汇用户协议》</span>
+        <span>同意協議並注冊《尚品匯用戶協議》</span>
         <span class="error-msg">{{errors.first("agree")}}</span>
       </div>
       <div class="btn">
-        <button @click="userRegister">完成注册</button>
+        <button @click="userRegister">完成注冊</button>
       </div>
     </div>
 
     <!-- 底部 -->
     <div class="copyright">
       <ul>
-        <li>关于我们</li>
-        <li>联系我们</li>
-        <li>联系客服</li>
-        <li>商家入驻</li>
-        <li>营销中心</li>
-        <li>手机尚品汇</li>
-        <li>销售联盟</li>
-        <li>尚品汇社区</li>
+        <li>關於我們</li>
+        <li>聯系我們</li>
+        <li>聯系客服</li>
+        <li>商家入駐</li>
+        <li>營銷中心</li>
+        <li>手機尚品匯</li>
+        <li>銷售聯盟</li>
+        <li>尚品匯社區</li>
       </ul>
-      <div class="address">地址：北京市昌平区宏福科技园综合楼6层</div>
-      <div class="beian">京ICP备19006430号
+      <div class="address">地址：北京市昌平區宏福科技園綜合樓6層</div>
+      <div class="beian">京ICP備19006430號
       </div>
     </div>
   </div>

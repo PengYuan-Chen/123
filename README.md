@@ -10,10 +10,10 @@
 - 選擇並加入購物車，選擇付款方式，地址，並顯示所選產品總金額及數量
 
 技術
-*使用 Vue CLI
-*組件封裝各類功能
-*使用 Vuex 集中儲存商品資訊
-*搭配 Axios 請求 API 獲取資料
-*Vue-Router 路由跳轉設定
-*localStorage 將資料儲存本地端，不被清空
-*Mock.js 模擬數據，測試程式運行效果
+- 使用 Vue CLI
+- 組件封裝各類功能
+- 使用 Vuex 集中儲存商品資訊
+- 搭配 Axios 請求 API 獲取資料
+- Vue-Router 路由跳轉設定
+- localStorage 將資料儲存本地端，不被清空
+- Mock.js 模擬數據，測試程式運行效果

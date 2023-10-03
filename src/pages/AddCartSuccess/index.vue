@@ -26,7 +26,7 @@
     name: 'AddCartSuccess',
     computed:{
       skuInfo(){
-        //取得sessionstorage中的值，字串把她轉成對象(JSON.parse)
+        //取得sessionstorage中的值，字串把她轉成對象(JSON.parse).
         return JSON.parse(sessionStorage.getItem('SKUINFO'))
       }
     },

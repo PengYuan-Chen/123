@@ -1,4 +1,4 @@
-#電商購物網站(Vue)
+# 電商購物網站(Vue)
 
 ![3 1](https://github.com/PengYuan-Chen/Vue_project1/assets/56713107/3bc82672-7e97-4ee6-bb83-e82422fec437)
 ![2](https://github.com/PengYuan-Chen/Vue_project1/assets/56713107/e3957fd0-60a4-4aa1-af27-796755d6c608)
